@@ -1,7 +1,6 @@
 
 
 .master-wrapper {
-    
     --left-section: 65%;
     --list-width: 60%;
     
@@ -55,8 +54,6 @@
     height: 100%;
     background-color: rgb(128, 153, 123);
 
-    
-
 
     display: flex;
     align-items: center;
@@ -82,4 +79,33 @@ ul {
     flex-direction: column;
     align-items: left;
     justify-content: center;
+}
+
+li{
+    box-sizing: border-box;
+    display: block;
+
+    cursor: pointer;
+    position: relative;
+
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    color: rgb(26, 62, 22);
+}
+
+li::before {
+    content: "";
+    height: 4px;
+    width: 0%;
+    background-color: rgb(51, 77, 49);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.2s ease;
+}
+
+li:hover::before {
+    width: 79%;
 }

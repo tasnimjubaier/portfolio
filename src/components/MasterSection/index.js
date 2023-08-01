@@ -11,7 +11,7 @@ const MasterSection = () => {
           </div>
           <div className={styles['right-section']}>
             <ul>
-              {/* <li>
+              <li>
                 About
               </li>
               <li>
@@ -25,7 +25,7 @@ const MasterSection = () => {
               </li>
               <li>
                 Get in touch
-              </li> */}
+              </li>
             </ul>
           </div>  
         </div>
