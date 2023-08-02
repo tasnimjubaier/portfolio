@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './index.module.css'
+import Description from './Description'
 
 const MasterSection = () => {
   return (
@@ -7,7 +8,7 @@ const MasterSection = () => {
       <div className={styles['wrapper-2']}>
         <div className={styles['wrapper-3']}>
           <div className={styles['left-section']}>
-            description
+            {/* <Description /> */}
           </div>
           <div className={styles['right-section']}>
             <ul>
