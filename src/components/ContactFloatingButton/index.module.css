@@ -14,15 +14,15 @@
     opacity: 80%;
     font-size: 1.3em;
 
-    background-color: #558054;
-    border: 1px solid #558054;
+    background-color: #456d44;
+    border: 1px solid #3c613b;
+
     color: #d7e2d3;
     transition: all 0.2s ease;
     z-index: 9;
 }
 
 .wrapper:hover {
-    
-    background-color: #456d44;
-    border: 1px solid #3c613b;
+    background-color: #558054;
+    border: 1px solid #558054;    
 }
