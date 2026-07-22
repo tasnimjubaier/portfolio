@@ -1,61 +1,37 @@
-
-import './App.css';
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Nav from './components/Nav';
 import Home from './pages/Home';
+import About from './pages/About';
+import Work from './pages/Work';
+import CP from './pages/CP';
+import Contact from './pages/Contact';
 
 function App() {
-
-  const sceneRef = useRef(null);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
 
   useEffect(() => {
-    const container = sceneRef.current;
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
-    // Create a scene, camera, and renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(95, window.innerWidth / window.innerHeight, 0.9, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    container.appendChild(renderer.domElement);
-
-    // Create a cube
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    // Position the camera
-    camera.position.z = 5;
-
-    // Animation loop
-    function animate() {
-      requestAnimationFrame(animate);
-
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    return () => {
-      // Clean up the scene
-      container.removeChild(renderer.domElement);
-    };
-  }, []);
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   return (
-    <div className="App">
-      <Home />
-      <div className='scene'>
-        <div ref={sceneRef}></div>
-      </div>
-      {/* <motion.div className='box' animate={{ x: 0 }}>
-        asdffe
-      </motion.div> */}
-    </div>
+    <BrowserRouter>
+      <Nav theme={theme} toggleTheme={toggleTheme} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/cp" element={<CP />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,128 @@
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 24px 80px;
+}
+
+.pageTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Large post ───────────────────────────────── */
+.postLarge {
+  cursor: pointer;
+}
+
+.postLarge:hover .postTitle {
+  color: var(--text-muted);
+}
+
+.postImageLarge {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: var(--surface);
+}
+
+.postImageLarge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Small posts ──────────────────────────────── */
+.smallGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.postSmall {
+  cursor: pointer;
+}
+
+.postSmall:hover .postTitleSmall {
+  color: var(--text-muted);
+}
+
+.postImageSmall {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: var(--surface);
+}
+
+.postImageSmall img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--bg-secondary) 100%);
+}
+
+/* ── Meta ─────────────────────────────────────── */
+.postMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.postDate {
+  font-size: 12px;
+  color: var(--text-subtle);
+}
+
+.postTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  transition: color 0.2s;
+}
+
+.postTitleSmall {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.postTag {
+  font-size: 11px;
+  color: var(--tag-text);
+  background: var(--tag-bg);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+@media (max-width: 560px) {
+  .smallGrid {
+    grid-template-columns: 1fr;
+  }
+}
