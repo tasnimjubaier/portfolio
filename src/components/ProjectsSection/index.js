@@ -1,22 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Canvas } from '@react-three/fiber'
-import { motion, useMotionValue, useTransform } from "framer-motion";
-
+import React from 'react';
 
 import styles from './index.module.css'
-const itemVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 }
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
-};
 
 const ProjectsSection = () => {
-  const x = useMotionValue(0)
-const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0])
-const [isOpen, setIsOpen] = useState(false); 
 
 
   return  (
