@@ -59,6 +59,7 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+  background-color: var(--surface); /* placeholder color while image loads */
 }
 
 .sidebarLocation {
