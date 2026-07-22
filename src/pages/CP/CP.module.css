@@ -185,9 +185,16 @@
 
 /* ── Responsive ───────────────────────────────── */
 @media (max-width: 520px) {
+  .main { padding: 90px 16px 64px; }
   .platformGrid { grid-template-columns: 1fr; }
-  .tableHeader, .tableRow {
+  /* Contest table: hide team column, keep event + rank */
+  .tableHeader {
+    grid-template-columns: 1fr auto;
+  }
+  .tableRow {
     grid-template-columns: 1fr auto;
   }
   .contestTeam { display: none; }
+  /* Also hide the Team header cell */
+  .tableHeader span:nth-child(2) { display: none; }
 }

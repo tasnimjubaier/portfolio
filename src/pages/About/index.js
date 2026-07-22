@@ -84,11 +84,21 @@ export default function About() {
 
       {/* ── Sidebar ────────────────────────────────── */}
       <aside className={styles.sidebar}>
-        {/* Avatar */}
-        <div className={styles.avatarWrap}>
-          <div className={styles.avatarCircle}>TJ</div>
+        {/* Avatar + name on mobile */}
+        <div className={styles.avatarRow}>
+          <div className={styles.avatarWrap}>
+            <img
+              src="/cafe-2024-cropped_3.jpeg"
+              alt="Tasnim Jubaier"
+              className={styles.avatarCircle}
+            />
+          </div>
+          <div className={styles.avatarMeta}>
+            <span className={styles.avatarName}>Tasnim Jubaier</span>
+            <span className={styles.avatarTitle}>Software Engineer & AI Evaluator</span>
+            <span className={styles.sidebarLocation}>BD / Dhaka</span>
+          </div>
         </div>
-        <div className={styles.sidebarLocation}>BD / Dhaka</div>
 
         {/* Social links */}
         <div className={styles.socialLinks}>

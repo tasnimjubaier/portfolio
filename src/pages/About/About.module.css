@@ -20,6 +20,32 @@
   gap: 20px;
 }
 
+/* Avatar row — stacked on desktop, side-by-side on mobile */
+.avatarRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatarMeta {
+  display: none; /* visible only on mobile — see below */
+  flex-direction: column;
+  gap: 2px;
+}
+
+.avatarName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.avatarTitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
 .avatarWrap {
   display: flex;
   justify-content: center;
@@ -29,23 +55,16 @@
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: var(--surface);
   border: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
-  /* swap for: background-image: url('/headshot.jpg'); background-size: cover; */
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .sidebarLocation {
   text-align: center;
   font-size: 12px;
   color: var(--text-subtle);
-  margin-top: -12px;
 }
 
 .socialLinks {
@@ -90,7 +109,6 @@
 }
 
 .tocItem:hover { color: var(--text-muted); }
-
 .tocActive { color: var(--text) !important; }
 
 .tocDash {
@@ -104,7 +122,7 @@
 /* ── Content ──────────────────────────────────── */
 .content { flex: 1; min-width: 0; }
 
-/* Profile header */
+/* Profile header — desktop only */
 .profileHeader {
   margin-bottom: 36px;
 }
@@ -194,10 +212,8 @@
 .expRole {
   display: block;
   font-size: 13px;
-  color: var(--text-muted);
   font-weight: 500;
   margin-bottom: 14px;
-  /* accent color — the magic-portfolio uses a teal/blue, we use a subtle link color */
   color: #6b9bcd;
 }
 
@@ -260,24 +276,55 @@
     flex-direction: column;
     gap: 0;
     padding-top: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
+  /* Sidebar becomes a top header bar */
   .sidebar {
     position: static;
     width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
     gap: 16px;
     padding-bottom: 24px;
     border-bottom: 1px solid var(--border);
     margin-bottom: 32px;
   }
 
-  .avatarWrap { justify-content: flex-start; }
+  /* Avatar row: photo left, name/title right */
+  .avatarRow {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
 
-  .socialLinks { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .avatarWrap {
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
 
+  .avatarCircle {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* Show name + title inline on mobile */
+  .avatarMeta {
+    display: flex;
+  }
+
+  .sidebarLocation {
+    text-align: left;
+    font-size: 11px;
+  }
+
+  /* Social links: horizontal */
+  .socialLinks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  /* TOC: horizontal pill chips */
   .toc {
     flex-direction: row;
     flex-wrap: wrap;
@@ -293,9 +340,18 @@
     border: 1px solid var(--border);
     border-radius: 100px;
     padding: 4px 12px;
+    font-size: 12px;
   }
 
   .tocActive { background: var(--tag-bg); }
 
+  /* Hide the desktop profile header — name is in sidebar now */
   .profileHeader { display: none; }
+
+  .sectionTitle { font-size: 1.25rem; }
+}
+
+@media (max-width: 400px) {
+  .avatarName { font-size: 1rem; }
+  .avatarTitle { font-size: 12px; }
 }

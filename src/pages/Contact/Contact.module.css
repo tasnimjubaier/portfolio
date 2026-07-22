@@ -132,3 +132,11 @@
   color: var(--text);
   transform: translateX(2px);
 }
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 520px) {
+  .main { padding: 90px 16px 64px; }
+  .pageTitle { font-size: 1.6rem; }
+  .linkCard { padding: 12px 14px; gap: 10px; }
+  .linkValue { font-size: 11px; }
+}

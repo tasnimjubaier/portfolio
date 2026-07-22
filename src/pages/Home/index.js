@@ -50,7 +50,7 @@ export default function Home() {
         </div>
 
         <Link to="/about" className={styles.heroAboutLink}>
-          <span className={styles.avatarEmoji} aria-hidden="true">TJ</span>
+          <img src="/cafe-2024-cropped_3.jpeg" alt="Tasnim Jubaier" className={styles.avatarEmoji} />
           About — Tasnim Jubaier
         </Link>
       </section>

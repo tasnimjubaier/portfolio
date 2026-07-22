@@ -203,6 +203,9 @@
 }
 
 @media (max-width: 520px) {
+  .main { padding: 90px 16px 64px; }
   .cardSummary { flex-direction: column; gap: 12px; }
   .cardActions { flex-direction: row; align-items: center; }
+  .cardImage { aspect-ratio: 16 / 9; }
+  .caseStudy { padding: 18px 16px 22px; }
 }
